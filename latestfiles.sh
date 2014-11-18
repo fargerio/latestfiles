@@ -9,6 +9,7 @@
 #
 DAYS=7
 REPLACEBASELINK=""
+VERBOSE=false
 while getopts ":p:o:d:b:v" optname
   do
     case "$optname" in
@@ -95,8 +96,8 @@ if [ $REPLACEBASELINK == "" ]; then
 	echo "not replacing"
 else
 	if $VERBOSE; then
-	echo "replacing: s_${DIRECTORY}_${REPLACEBASELINK}_"
+	echo "replacing: s-${DIRECTORY}-${REPLACEBASELINK}-"
 	fi
-	sed "s_${DIRECTORY}_${REPLACEBASELINK}_" "$TEMP_FILE" > "$OUTPUT_FILE"
+	sed "s-${DIRECTORY}-${REPLACEBASELINK}-" < "$TEMP_FILE" > "$OUTPUT_FILE"
 	rm "$TEMP_FILE"
 fi
