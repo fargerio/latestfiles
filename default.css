@@ -14,8 +14,9 @@ h1 {
 }
 
 /* Sortable tables by Stuart Langridge www.kryogenix.org/code/browser/sorttable/ */
-table.sortable thead {
-    cursor: hand;
+.sortable thead{
+    cursor:pointer;
+    cursor:hand;
 }
 
 table{
@@ -23,10 +24,6 @@ table{
     border-spacing: 0;
 	margin:0px;padding:0px;
 	width:36em;
-}
-
-tr:hover td{
-	
 }
 
 tr:nth-child(odd)	 { background-color:#e5e5e5; }
