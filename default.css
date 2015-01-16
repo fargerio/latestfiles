@@ -67,3 +67,75 @@ a {
     color: #006A51;
     text-decoration: none;
 }
+
+td {
+	background-position:center center; 
+	background-size:70%;
+	background-repeat:no-repeat;
+}
+
+.pdf {
+	background-image: url('icons/pdf.svg');
+}
+
+.odt {
+	background-image: url('icons/odt.svg');
+}
+
+.doc, .docx{
+	background-image: url('icons/doc.svg');
+}
+
+.zip, .rar, .gz, .bz2 {
+	background-image: url('icons/zip.svg');	
+}
+
+.odp {
+	background-image: url('icons/odp.svg');
+}
+
+.ods{
+	background-image: url('icons/ods.svg');
+}
+
+.ppt, .pptx{
+	background-image: url('icons/ppt.svg');
+}
+
+.asc {
+	background-image: url('icons/asc.svg');
+}
+
+.pgp {
+	background-image: url('icons/pgp.svg');
+}
+
+.kdb {
+	background-image: url('icons/kdb.svg');
+}
+
+.dmg {
+	background-image: url('icons/odp.svg');
+}
+
+.lock {
+	background-image: url('icons/lock.svg');
+}
+
+.exe {
+	background-image: url('icons/exe.svg');
+}
+
+.odb {
+	background-image: url('icons/db.svg');
+}
+
+.xls, .xlsx {
+	background-image: url('icons/xls.svg');
+}
+
+.html, .sh, .php {
+	background-image: url('icons/script.svg');
+}
+
+
