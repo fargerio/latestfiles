@@ -57,8 +57,9 @@ TEMP_FILE="temp.html"
 START="start.$$"
 END="end.$$"
 
-echo '<html><body><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link href="$THEME.css" media="all" rel="stylesheet" type="text/css" />
-   </head>' > "$TEMP_FILE"
+echo '<html><body><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link href="' > "$TEMP_FILE"
+echo $THEME >> "$TEMP_FILE"
+echo '.css" media="all" rel="stylesheet" type="text/css" /></head>' >> "$TEMP_FILE"
 
 SDATE=$(date +"%Y-%m-%d" --date="1 days ago")
 touch --date "$SDATE" "$START"
