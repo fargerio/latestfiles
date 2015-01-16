@@ -13,6 +13,11 @@ h1 {
 	font-size:16px;
 }
 
+/* Sortable tables by Stuart Langridge www.kryogenix.org/code/browser/sorttable/ */
+table.sortable thead {
+    cursor: hand;
+}
+
 table{
     border-collapse: collapse;
     border-spacing: 0;
@@ -45,7 +50,7 @@ td:nth-child(1), td:nth-child(3), td:nth-child(4){
 th{
 	background-color:#006A51;
 	text-align:center;
-	font-size:12px;
+	font-size:10px;
 	font-family:Verdana;
 	font-weight:normal;
 	color:#ffffff;

@@ -59,17 +59,17 @@ END="end.$$"
 
 echo '<html><body><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link href="' > "$TEMP_FILE"
 echo $THEME >> "$TEMP_FILE"
-echo '.css" media="all" rel="stylesheet" type="text/css" /></head>' >> "$TEMP_FILE"
+echo '.css" media="all" rel="stylesheet" type="text/css" /><script src="sorttable.js"></script></head>' >> "$TEMP_FILE"
 
 SDATE=$(date +"%Y-%m-%d" --date="1 days ago")
 touch --date "$SDATE" "$START"
-echo "<h1>Today</h1><table><thead><tr><th>type</th><th>name</th><th>size</th><th>time</th></tr></thead>" >> "$TEMP_FILE"
+echo '<h1>Today</h1><table class="sortable"><thead><tr><th>type</th><th>name</th><th>size</th><th>time</th></tr></thead>' >> "$TEMP_FILE"
 
 if $VERBOSE; then
 	echo "searching: $DIRECTORY"
 fi
 
-find $DIRECTORY -newer $START -type f \( ! -regex '.*/\..*' \) -printf "<tr><td class=\"%y\"></td><td><a href=\"%p\">%f</a></td><td>%kk</td><td>%Tk:%TM</td></tr>" >> "$TEMP_FILE"
+find $DIRECTORY -newer $START -type f \( ! -regex '.*/\..*' \) -printf "<tr><td class=\"%y\"></td><td><a href=\"%p\">%f</a></td><td>%kk</td><td>%TH:%TM</td></tr>" >> "$TEMP_FILE"
 echo "</table>" >> "$TEMP_FILE"
 I=1
 while [ $I -le $DAYS ]
@@ -81,7 +81,7 @@ do
 	touch --date "$SDATE" "$START"
 	touch --date "$EDATE" "$END"
 
-	echo "<h1>$SDATE</h1><table><thead><tr><th>type</th><th>name</th><th>size</th><th>time</th></tr></thead>" >> "$TEMP_FILE"
+	echo '<h1>$SDATE</h1><table class="sortable"><thead><tr><th>type</th><th>name</th><th>size</th><th>time</th></tr></thead>' >> "$TEMP_FILE"
 
 	if $VERBOSE; then
 		echo "searching: $SDATE - $(( DAYS-I+2 )) day(s) to go"
