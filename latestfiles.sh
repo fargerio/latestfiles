@@ -96,7 +96,7 @@ printf "</body>\n</html>" >> "$TEMP_FILE"
 /bin/rm -f "$START" 
 /bin/rm -f "$END"
 
-sed -i 's:class\=".*\.\(.*\)"><\/t:class=\"\1\"><\/t:g' "$TEMP_FILE"
+sed -i 's;class\=".*\.\(.*\)"><\/t;class=\"\1\"><\/t;g' "$TEMP_FILE"
 
 
 if [ "$REPLACEBASELINK" == "" ]; then
@@ -106,6 +106,6 @@ else
 	if $VERBOSE; then
 	echo "replacing: s-${DIRECTORY}-${REPLACEBASELINK}-g"
 	fi
-	sed "s:${DIRECTORY}:${REPLACEBASELINK}:g" < "$TEMP_FILE" > "$OUTPUT_FILE"
+	sed "s;${DIRECTORY};${REPLACEBASELINK};g" < "$TEMP_FILE" > "$OUTPUT_FILE"
 	rm "$TEMP_FILE"
 fi
