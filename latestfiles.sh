@@ -10,6 +10,7 @@
 DAYS=7
 REPLACEBASELINK=""
 VERBOSE=false
+OUTPUT_FILE=latestfiles.html
 while getopts ":p:o:d:b:v" optname
   do
     case "$optname" in
@@ -96,8 +97,8 @@ if [ $REPLACEBASELINK == "" ]; then
 	echo "not replacing"
 else
 	if $VERBOSE; then
-	echo "replacing: s-${DIRECTORY}-${REPLACEBASELINK}-"
+	echo "replacing: s-${DIRECTORY}-${REPLACEBASELINK}-g"
 	fi
-	sed "s-${DIRECTORY}-${REPLACEBASELINK}-" < "$TEMP_FILE" > "$OUTPUT_FILE"
+	sed "s:${DIRECTORY}:${REPLACEBASELINK}:g" < "$TEMP_FILE" > "$OUTPUT_FILE"
 	rm "$TEMP_FILE"
 fi
