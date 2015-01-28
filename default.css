@@ -130,6 +130,14 @@ td {
 	background-image: url('icons/db.svg');
 }
 
+.jpg {
+	background-image: url('icons/jpg.svg');
+}
+
+.png {
+	background-image: url('icons/png.svg');
+}
+
 .xls, .xlsx {
 	background-image: url('icons/xls.svg');
 }
@@ -138,4 +146,7 @@ td {
 	background-image: url('icons/script.svg');
 }
 
+.mkv, .avi, .mpg, .mpeg, .mov {
+	background-image: url('icons/video.svg');
+}
 
